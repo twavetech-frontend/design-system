@@ -114,7 +114,7 @@
   --dsOpacityLow: 0.1;
   --dsOpacityMd: 0.5;
   --dsOpacityHigh: 0.9;
-  --dsFontFamiliesHeading: Inter;
+  --dsFontFamiliesHeading: Pretendard;
   --dsFontFamiliesBody: Roboto;
   --dsLineHeightsHeading: 1.1;
   --dsLineHeightsBody: 1.4;
@@ -155,9 +155,9 @@
   --dsCardBackground: #ffffff;
   --dsCardPadding: 16px;
   --dsBoxShadowDefault: 5px 5px 5px 3px rgba(26, 32, 44, 0.15), 4px 4px 5px 6px #00000033;
-  --dsTypographyH1Bold: 700 49px/1.1 Inter;
-  --dsTypographyH1Regular: 400 49px/1.1 Inter;
-  --dsTypographyH2Bold: 700 39px/1.1 Inter;
-  --dsTypographyH2Regular: 400 39px/1.1 Inter;
+  --dsTypographyH1Bold: 700 49px/1.1 Pretendard;
+  --dsTypographyH1Regular: 400 49px/1.1 Pretendard;
+  --dsTypographyH2Bold: 700 39px/1.1 Pretendard;
+  --dsTypographyH2Regular: 400 39px/1.1 Pretendard;
   --dsTypographyBody: 400 16px/1.1 Roboto;
 }
