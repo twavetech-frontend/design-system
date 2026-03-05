@@ -2,30 +2,28 @@ import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
 import fs from 'fs';
 
-// Read tokens.json and fix de-structured descriptions by token-transformer
-const tokensData = JSON.parse(fs.readFileSync('./tokens-transformed.json', 'utf8'));
+// Read the original tokens.json exported by Tokens Studio
+const rawData = fs.readFileSync('./tokens.json', 'utf8');
+const allTokens = JSON.parse(rawData);
 
-function fixDescriptions(obj) {
-    for (const key in obj) {
-        if ((key === 'description' || key === '$description') && typeof obj[key] === 'object' && obj[key] !== null) {
-            // Extract the actual string from value property, or delete it
-            if (typeof obj[key].value === 'string') {
-                obj[key] = obj[key].value;
-            } else {
-                delete obj[key];
-            }
-        } else if (typeof obj[key] === 'object' && obj[key] !== null) {
-            fixDescriptions(obj[key]);
+// We manually merge the sets: 'core', 'light', 'theme'
+const setsToMerge = ['core', 'light', 'theme'];
+const mergedTokens = {};
+
+setsToMerge.forEach((setName) => {
+    if (allTokens[setName]) {
+        // Deep merge to combine token sets safely
+        for (const [key, value] of Object.entries(allTokens[setName])) {
+            mergedTokens[key] = { ...mergedTokens[key], ...value };
         }
     }
-}
-fixDescriptions(tokensData);
+});
 
 // Register all Tokens Studio transforms
 register(StyleDictionary);
 
 const sd = new StyleDictionary({
-    tokens: tokensData,
+    tokens: mergedTokens,
     preprocessors: ['tokens-studio'],
     platforms: {
         css: {
