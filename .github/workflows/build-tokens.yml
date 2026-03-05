@@ -18,14 +18,11 @@ jobs:
         with:
           node-version: '18'
           
-      - name: Install Style Dictionary
-        run: npm install style-dictionary
-        
-      - name: Transform tokens
-        run: npx --yes token-transformer tokens.json tokens-transformed.json
+      - name: Install Dependencies
+        run: npm install
         
       - name: Build tokens
-        run: npx --yes style-dictionary build
+        run: node build.js
         
       - name: Commit CSS
         run: |
