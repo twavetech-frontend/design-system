@@ -880,7 +880,6 @@
   --yellow-800: #854a0e;
   --yellow-900: #713b12;
   --yellow-950: #542c0d;
-  --gradient-skeuemorphicGradientBorder: linear-gradient(180deg, #ffffff1f 0%, #ffffff00 100%); /** Used to create a subtle skeuemorphic effect in components such as primary buttons. This can be removed or replaced with a 1px stroke if you prefer a flat style. */
   --gradient-gray-600>500-90deg: linear-gradient(90deg, #535862 0%, #717680 100%);
   --gradient-gray-700>600-45deg: linear-gradient(45deg, #414651 0%, #535862 100%);
   --gradient-gray-800>600-45deg: linear-gradient(45deg, #252b37 0%, #535862 100%);
