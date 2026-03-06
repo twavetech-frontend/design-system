@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'tokens.json'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -39,3 +40,17 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.DOCS_DEPLOY_TOKEN }}" \
             https://api.github.com/repos/stresslee/design-system-docs/dispatches \
             -d '{"event_type":"tokens-updated"}'
+
+      - name: Generate agent DESIGN_TOKENS.md
+        run: node sync-to-agent.js --out /tmp/agent-ds
+
+      - name: Trigger figma-design-agent token sync
+        run: |
+          # Upload DESIGN_TOKENS.md and TOKEN_MAP.json as dispatch payload
+          TOKENS_MD=$(base64 -w0 /tmp/agent-ds/DESIGN_TOKENS.md)
+          TOKEN_MAP=$(base64 -w0 /tmp/agent-ds/TOKEN_MAP.json)
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.DOCS_DEPLOY_TOKEN }}" \
+            https://api.github.com/repos/stresslee/figma-design-agent/dispatches \
+            -d "{\"event_type\":\"tokens-updated\",\"client_payload\":{\"tokens_md\":\"${TOKENS_MD}\",\"token_map\":\"${TOKEN_MAP}\"}}"
