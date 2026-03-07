@@ -544,18 +544,18 @@
   --grayDarkMode-800: #22262f;
   --grayDarkMode-900: #13161b;
   --grayDarkMode-950: #0c0e12;
-  --brand-25: #fafaff;
-  --brand-50: #f4f3ff;
-  --brand-100: #ebe9fe;
-  --brand-200: #d9d6fe;
-  --brand-300: #bdb4fe;
-  --brand-400: #9b8afb;
-  --brand-500: #7a5af8;
-  --brand-600: #6938ef;
-  --brand-700: #5925dc;
-  --brand-800: #4a1fb8;
-  --brand-900: #3e1c96;
-  --brand-950: #27115f;
+  --brand-25: #fafef5;
+  --brand-50: #f3fee7;
+  --brand-100: #e3fbcc;
+  --brand-200: #d0f8ab;
+  --brand-300: #a6ef67;
+  --brand-400: #85e13a;
+  --brand-500: #66c61c;
+  --brand-600: #4ca30d;
+  --brand-700: #3b7c0f;
+  --brand-800: #326212;
+  --brand-900: #2b5314;
+  --brand-950: #15290a;
   --error-25: #fffbfa;
   --error-50: #fef3f2;
   --error-100: #fee4e2;
@@ -894,13 +894,13 @@
   --gradient-gray-200>25-180deg: linear-gradient(180deg, #fdfdfd 0%, #e9eaeb 100%);
   --gradient-gray-200>50-180deg: linear-gradient(180deg, #fafafa 0%, #e9eaeb 100%);
   --gradient-gray-200>100-180deg: linear-gradient(180deg, #f5f5f5 0%, #e9eaeb 100%);
-  --gradient-brand-600>500-90deg: linear-gradient(90deg, #6938ef 0%, #7a5af8 100%);
-  --gradient-brand-700>600-45deg: linear-gradient(45deg, #5925dc 0%, #6938ef 100%);
-  --gradient-brand-800>600-45deg: linear-gradient(45deg, #4a1fb8 0%, #6938ef 100%);
-  --gradient-brand-800>600-90deg: linear-gradient(90deg, #4a1fb8 0%, #6938ef 100%);
-  --gradient-brand-800>700(26-5deg): linear-gradient(27deg, #4a1fb8 0%, #5925dc 100%);
-  --gradient-brand-900>600-45deg: linear-gradient(45deg, #3e1c96 0%, #6938ef 100%);
-  --gradient-brand-900>700-45deg: linear-gradient(45deg, #3e1c96 0%, #5925dc 100%);
+  --gradient-brand-600>500-90deg: linear-gradient(90deg, #4ca30d 0%, #66c61c 100%);
+  --gradient-brand-700>600-45deg: linear-gradient(45deg, #3b7c0f 0%, #4ca30d 100%);
+  --gradient-brand-800>600-45deg: linear-gradient(45deg, #326212 0%, #4ca30d 100%);
+  --gradient-brand-800>600-90deg: linear-gradient(90deg, #326212 0%, #4ca30d 100%);
+  --gradient-brand-800>700(26-5deg): linear-gradient(27deg, #326212 0%, #3b7c0f 100%);
+  --gradient-brand-900>600-45deg: linear-gradient(45deg, #2b5314 0%, #4ca30d 100%);
+  --gradient-brand-900>700-45deg: linear-gradient(45deg, #2b5314 0%, #3b7c0f 100%);
   --gradient-linear-10: linear-gradient(0deg, #cfc7f8 0%, #ebbba7 100%);
   --gradient-linear-11: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);
   --gradient-linear-12: linear-gradient(45deg, #7b6ae0 0%, #ffbb89 100%);
@@ -1009,15 +1009,15 @@
   --shadows-portfolioMockups-shadowOverlayRightLg: -40px 40px 72px 0 #0a0d121f; /** Used for portfolio mockup layouts. */
   --shadows-portfolioMockups-shadowOverlayLeftLg: 100px 100px 150px 0 #0a0d121f; /** Used for portfolio mockup layouts. */
   --shadows-portfolioMockups-shadowGridMd: 32px 32px 64px 0 #0a0d1214; /** Used for portfolio mockup layouts. */
-  --focusRings-focusRing: 0 0 0 2px #ffffff, 0 0 0 4px #7a5af8; /** Used for focus states in components. For example toggles and checkboxes. */
-  --focusRings-focusRingShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #7a5af8; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
+  --focusRings-focusRing: 0 0 0 2px #ffffff, 0 0 0 4px #66c61c; /** Used for focus states in components. For example toggles and checkboxes. */
+  --focusRings-focusRingShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #66c61c; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
   /**
    * Used for focus states in components that also require a shadow and a subtle skeuomorphic effect. For example, buttons and tabs.
    * 
    * This can be replaced with focus-ring-shadow-xs if you prefer a flat style.
    */
-  --focusRings-focusRingShadowXsSkeuomorphic: inset 0 0 0 1px #0a0d122e, inset 0 -2px 0 0 #0a0d120d, 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #7a5af8;
-  --focusRings-focusRingShadowSm: 0 1px 3px 0 #0a0d121a, 0 1px 2px 0 #0a0d121a, 0 0 0 2px #ffffff, 0 0 0 4px #7a5af8; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
+  --focusRings-focusRingShadowXsSkeuomorphic: inset 0 0 0 1px #0a0d122e, inset 0 -2px 0 0 #0a0d120d, 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #66c61c;
+  --focusRings-focusRingShadowSm: 0 1px 3px 0 #0a0d121a, 0 1px 2px 0 #0a0d121a, 0 0 0 2px #ffffff, 0 0 0 4px #66c61c; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
   --focusRings-focusRingError: 0 0 0 2px #ffffff, 0 0 0 4px #f04438; /** Used for destructive or error focus states in components. For example, destructive button links. */
   --focusRings-focusRingErrorShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #f04438; /** Used for destructive or error focus states in components that also require a shadow. For example, destructive buttons. */
   /**
