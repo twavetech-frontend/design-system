@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stresslee/design-system.git"
+    "url": "git+https://github.com/twavetech-frontend/design-system.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/stresslee/design-system/issues"
+    "url": "https://github.com/twavetech-frontend/design-system/issues"
   },
-  "homepage": "https://github.com/stresslee/design-system#readme"
+  "homepage": "https://github.com/twavetech-frontend/design-system#readme"
 }
