@@ -974,23 +974,23 @@
   --shadows-portfolioMockups-shadowOverlayLeftLg: 100px 100px 150px 0 #0a0d121f; /** Used for portfolio mockup layouts. */
   --shadows-portfolioMockups-shadowGridMd: 32px 32px 64px 0 #0a0d1214; /** Used for portfolio mockup layouts. */
   --shadows-shadow4xl: 0 21px 120px -12px #0a0d1224, 0 14px 60px -2.5px #0a0d120a; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
-  --focusRings-focusRing: 0 0 0 2px #f3f4f6, 0 0 0 4px #7700ff; /** Used for focus states in components. For example toggles and checkboxes. */
-  --focusRings-focusRingShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #f3f4f6, 0 0 0 4px #7700ff; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
+  --focusRings-focusRing: 0 0 0 2px #ffffff, 0 0 0 4px #7700ff; /** Used for focus states in components. For example toggles and checkboxes. */
+  --focusRings-focusRingShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #7700ff; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
   /**
    * Used for focus states in components that also require a shadow and a subtle skeuomorphic effect. For example, buttons and tabs.
    * 
    * This can be replaced with focus-ring-shadow-xs if you prefer a flat style.
    */
-  --focusRings-focusRingShadowXsSkeuomorphic: 0 0 0 2px #f3f4f6, 0 0 0 4px #7700ff;
-  --focusRings-focusRingShadowSm: 0 1px 3px 0 #0a0d121a, 0 1px 2px 0 #0a0d121a, 0 0 0 2px #f3f4f6, 0 0 0 4px #7700ff; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
-  --focusRings-focusRingError: 0 0 0 2px #f3f4f6, 0 0 0 4px #f04438; /** Used for destructive or error focus states in components. For example, destructive button links. */
-  --focusRings-focusRingErrorShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #f3f4f6, 0 0 0 4px #f04438; /** Used for destructive or error focus states in components that also require a shadow. For example, destructive buttons. */
+  --focusRings-focusRingShadowXsSkeuomorphic: 0 0 0 2px #ffffff, 0 0 0 4px #7700ff;
+  --focusRings-focusRingShadowSm: 0 1px 3px 0 #0a0d121a, 0 1px 2px 0 #0a0d121a, 0 0 0 2px #ffffff, 0 0 0 4px #7700ff; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
+  --focusRings-focusRingError: 0 0 0 2px #ffffff, 0 0 0 4px #f04438; /** Used for destructive or error focus states in components. For example, destructive button links. */
+  --focusRings-focusRingErrorShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #ffffff, 0 0 0 4px #f04438; /** Used for destructive or error focus states in components that also require a shadow. For example, destructive buttons. */
   /**
    * Used for focus states in destructive or error components that also require a shadow and a subtle skeuomorphic effect. For example, destructive buttons.
    * 
    * This can be replaced with focus-ring-error-shadow-xs if you prefer a flat style.
    */
-  --focusRings-focusRingErrorShadowXsSkeuomorphic: 0 0 0 2px #f3f4f6, 0 0 0 4px #f04438;
+  --focusRings-focusRingErrorShadowXsSkeuomorphic: 0 0 0 2px #ffffff, 0 0 0 4px #f04438;
   --fontSize-0: 12px;
   --fontSize-1: 14px;
   --fontSize-2: 16px;
