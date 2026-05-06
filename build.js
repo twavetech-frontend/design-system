@@ -92,7 +92,7 @@ const sdLight = new StyleDictionary({
     platforms: {
         css: {
             transformGroup: 'custom-tokens-studio',
-            buildPath: 'build/css/',
+            buildPath: 'web/',
             files: [
                 {
                     destination: 'tokens.css',
@@ -112,7 +112,7 @@ const sdDark = new StyleDictionary({
     platforms: {
         css: {
             transformGroup: 'custom-tokens-studio',
-            buildPath: 'build/css/',
+            buildPath: 'web/',
             files: [
                 {
                     destination: 'tokens-dark.css',
