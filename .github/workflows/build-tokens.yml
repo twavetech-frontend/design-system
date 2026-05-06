@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'tokens.json'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -37,3 +38,19 @@ jobs:
           fi
           git commit -m "chore(tokens): rebuild from Figma push [skip ci]"
           git push
+
+      - name: Trigger design-system-docs rebuild
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.DOCS_DEPLOY_TOKEN }}" \
+            https://api.github.com/repos/twavetech-frontend/design-system-docs/dispatches \
+            -d '{"event_type":"tokens-updated"}'
+
+      - name: Trigger figma-design-agent token sync
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.DOCS_DEPLOY_TOKEN }}" \
+            https://api.github.com/repos/twavetech-frontend/figma-design-agent/dispatches \
+            -d '{"event_type":"tokens-updated"}'
