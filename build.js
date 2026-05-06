@@ -3,6 +3,7 @@ import StyleDictionary from 'style-dictionary';
 import fs from 'fs';
 import { generateTokensTs } from './formats/web-ts.js';
 import { iosColorsFormatDef } from './formats/ios-colors.js';
+import { iosSpacingFormatDef } from './formats/ios-spacing.js';
 
 // Read the original tokens.json exported by Tokens Studio
 const rawData = fs.readFileSync('./tokens.json', 'utf8');
@@ -12,6 +13,7 @@ const allTokens = JSON.parse(rawData);
 register(StyleDictionary);
 
 StyleDictionary.registerFormat(iosColorsFormatDef);
+StyleDictionary.registerFormat(iosSpacingFormatDef);
 
 // Custom name transform: kebab-case groups with camelCase leaves
 // e.g. Colors / Text / text-primary (900) → colors-text-textPrimary-900
@@ -112,6 +114,10 @@ const sdLight = new StyleDictionary({
                     destination: 'ColorsLight.swift',
                     format: 'ios/colors-namespace',
                     options: { namespace: 'LightColors' },
+                },
+                {
+                    destination: 'Spacing.swift',
+                    format: 'ios/spacing-radius',
                 },
             ],
         },
