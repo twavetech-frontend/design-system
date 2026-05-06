@@ -6,6 +6,7 @@ import { iosColorsFormatDef } from './formats/ios-colors.js';
 import { iosSpacingFormatDef } from './formats/ios-spacing.js';
 import { iosTypographyFormatDef } from './formats/ios-typography.js';
 import { androidColorsFormatDef } from './formats/android-colors.js';
+import { androidSpacingFormatDef } from './formats/android-spacing.js';
 
 // Read the original tokens.json exported by Tokens Studio
 const rawData = fs.readFileSync('./tokens.json', 'utf8');
@@ -18,6 +19,7 @@ StyleDictionary.registerFormat(iosColorsFormatDef);
 StyleDictionary.registerFormat(iosSpacingFormatDef);
 StyleDictionary.registerFormat(iosTypographyFormatDef);
 StyleDictionary.registerFormat(androidColorsFormatDef);
+StyleDictionary.registerFormat(androidSpacingFormatDef);
 
 // Custom name transform: kebab-case groups with camelCase leaves
 // e.g. Colors / Text / text-primary (900) → colors-text-textPrimary-900
@@ -137,6 +139,10 @@ const sdLight = new StyleDictionary({
                     destination: 'LightColors.kt',
                     format: 'android/compose-colors',
                     options: { objectName: 'LightColors' },
+                },
+                {
+                    destination: 'Spacing.kt',
+                    format: 'android/compose-spacing',
                 },
             ],
         },
