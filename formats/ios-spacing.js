@@ -1,13 +1,4 @@
-function stripPx(v) {
-  if (typeof v !== 'string') return v;
-  const m = v.match(/^(-?\d+(?:\.\d+)?)px$/);
-  return m ? m[1] : v;
-}
-
-function isNumericLike(v) {
-  if (typeof v === 'number') return true;
-  return typeof v === 'string' && /^-?\d+(?:\.\d+)?(?:px)?$/.test(v);
-}
+import { stripPx, isNumericLike } from './utils.js';
 
 export function iosSpacingFormat({ dictionary }) {
   const spacing = dictionary.allTokens.filter((t) => {

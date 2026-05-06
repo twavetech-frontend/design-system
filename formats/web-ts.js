@@ -1,3 +1,5 @@
+import { stripPx } from './utils.js';
+
 /**
  * Pure function: generate web/tokens.ts content from light + dark transformed token arrays.
  *
@@ -17,12 +19,6 @@ export function generateTokensTs(lightTokens, darkTokens) {
       && /^radius/i.test(t.path[0] || ''),
   );
   const typography = lightTokens.filter((t) => t.$type === 'typography');
-
-  const stripPx = (v) => {
-    if (typeof v !== 'string') return v;
-    const m = v.match(/^(-?\d+(?:\.\d+)?)px$/);
-    return m ? Number(m[1]) : v;
-  };
 
   // Quote key if it contains characters invalid for unquoted TS identifiers (e.g. hyphens, digits-only start)
   const safeKey = (name) => /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(name) ? name : `'${name}'`;
