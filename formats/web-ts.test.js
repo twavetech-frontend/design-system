@@ -56,3 +56,17 @@ test('exports type aliases', () => {
   assert.match(out, /export type ColorToken = keyof typeof colors\.light/);
   assert.match(out, /export type SpacingToken = keyof typeof spacing/);
 });
+
+test('parses SD v5 CSS font shorthand string', () => {
+  const light = [{
+    name: 'display2xlRegular',
+    $type: 'typography',
+    $value: '400 72px/90 Pretendard',
+    path: ['Display 2xl', 'Regular'],
+  }];
+  const out = generateTokensTs(light, []);
+  assert.match(out, /fontFamily: 'Pretendard'/);
+  assert.match(out, /fontWeight: 400/);
+  assert.match(out, /fontSize: 72/);
+  assert.match(out, /lineHeight: 90/);
+});

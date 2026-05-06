@@ -8,8 +8,14 @@
 export function generateTokensTs(lightTokens, darkTokens) {
   const lightColors = lightTokens.filter((t) => t.$type === 'color');
   const darkColors = darkTokens.filter((t) => t.$type === 'color');
-  const spacing = lightTokens.filter((t) => t.$type === 'dimension' || t.$type === 'spacing');
-  const radius = lightTokens.filter((t) => t.$type === 'borderRadius');
+  const spacing = lightTokens.filter(
+    (t) => (t.$type === 'number' || t.$type === 'dimension' || t.$type === 'spacing')
+      && /^spacing/i.test(t.path[0] || ''),
+  );
+  const radius = lightTokens.filter(
+    (t) => (t.$type === 'number' || t.$type === 'borderRadius')
+      && /^radius/i.test(t.path[0] || ''),
+  );
   const typography = lightTokens.filter((t) => t.$type === 'typography');
 
   const stripPx = (v) => {
@@ -25,7 +31,10 @@ export function generateTokensTs(lightTokens, darkTokens) {
     tokens.map((t) => `    ${safeKey(t.name)}: '${t.$value}',`).join('\n');
 
   const dimEntries = (tokens) =>
-    tokens.map((t) => `  ${safeKey(t.name)}: ${stripPx(t.$value)},`).join('\n');
+    tokens.map((t) => {
+      const v = stripPx(t.$value);
+      return `  ${safeKey(t.name)}: ${typeof v === 'number' ? v : `'${v}'`},`;
+    }).join('\n');
 
   /**
    * Parse a CSS font shorthand or composite object into individual properties.
