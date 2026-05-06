@@ -82,11 +82,11 @@ const commonSets = Object.keys(allTokens).filter(key =>
 );
 
 // Build light mode: common + light color mode
-const lightSets = [...commonSets, '1. Color modes/Light mode'];
+const lightSets = [...commonSets, '1. Color modes/Light'];
 const lightTokens = mergeSets(lightSets);
 
 // Build dark mode: common + dark color mode
-const darkSets = [...commonSets, '1. Color modes/Dark mode'];
+const darkSets = [...commonSets, '1. Color modes/Dark'];
 const darkTokens = mergeSets(darkSets);
 
 // Build light tokens (main tokens.css)
