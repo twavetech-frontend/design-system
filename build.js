@@ -2,6 +2,7 @@ import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
 import fs from 'fs';
 import { generateTokensTs } from './formats/web-ts.js';
+import { iosColorsFormatDef } from './formats/ios-colors.js';
 
 // Read the original tokens.json exported by Tokens Studio
 const rawData = fs.readFileSync('./tokens.json', 'utf8');
@@ -9,6 +10,8 @@ const allTokens = JSON.parse(rawData);
 
 // Register all Tokens Studio transforms
 register(StyleDictionary);
+
+StyleDictionary.registerFormat(iosColorsFormatDef);
 
 // Custom name transform: kebab-case groups with camelCase leaves
 // e.g. Colors / Text / text-primary (900) → colors-text-textPrimary-900
@@ -101,6 +104,17 @@ const sdLight = new StyleDictionary({
                 },
             ],
         },
+        ios: {
+            transformGroup: 'tokens-studio',
+            buildPath: 'ios/',
+            files: [
+                {
+                    destination: 'ColorsLight.swift',
+                    format: 'ios/colors-namespace',
+                    options: { namespace: 'LightColors' },
+                },
+            ],
+        },
     },
 });
 
@@ -121,6 +135,17 @@ const sdDark = new StyleDictionary({
                     options: {
                         selector: '[data-theme="dark"]',
                     },
+                },
+            ],
+        },
+        ios: {
+            transformGroup: 'tokens-studio',
+            buildPath: 'ios/',
+            files: [
+                {
+                    destination: 'ColorsDark.swift',
+                    format: 'ios/colors-namespace',
+                    options: { namespace: 'DarkColors' },
                 },
             ],
         },
