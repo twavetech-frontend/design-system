@@ -3,19 +3,14 @@
  *
  * Inputs are SD-transformed tokens (post-name-camelCase, post-reference-resolve).
  * Each token has: name (string), $type (string), $value (string|object), path (string[]).
- * Supports both DTCG ($type/$value) and SD v5 resolved (type/value) field names.
+ * SD v5 always emits DTCG fields ($type/$value).
  */
 export function generateTokensTs(lightTokens, darkTokens) {
-  // Helper: read type from either DTCG ($type) or SD resolved (type)
-  const getType = (t) => t.$type || t.type || '';
-  // Helper: read value from either DTCG ($value) or SD resolved (value)
-  const getValue = (t) => (t.$value !== undefined ? t.$value : t.value);
-
-  const lightColors = lightTokens.filter((t) => getType(t) === 'color');
-  const darkColors = darkTokens.filter((t) => getType(t) === 'color');
-  const spacing = lightTokens.filter((t) => getType(t) === 'dimension' || getType(t) === 'spacing');
-  const radius = lightTokens.filter((t) => getType(t) === 'borderRadius');
-  const typography = lightTokens.filter((t) => getType(t) === 'typography');
+  const lightColors = lightTokens.filter((t) => t.$type === 'color');
+  const darkColors = darkTokens.filter((t) => t.$type === 'color');
+  const spacing = lightTokens.filter((t) => t.$type === 'dimension' || t.$type === 'spacing');
+  const radius = lightTokens.filter((t) => t.$type === 'borderRadius');
+  const typography = lightTokens.filter((t) => t.$type === 'typography');
 
   const stripPx = (v) => {
     if (typeof v !== 'string') return v;
@@ -27,10 +22,10 @@ export function generateTokensTs(lightTokens, darkTokens) {
   const safeKey = (name) => /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(name) ? name : `'${name}'`;
 
   const colorEntries = (tokens) =>
-    tokens.map((t) => `    ${safeKey(t.name)}: '${getValue(t)}',`).join('\n');
+    tokens.map((t) => `    ${safeKey(t.name)}: '${t.$value}',`).join('\n');
 
   const dimEntries = (tokens) =>
-    tokens.map((t) => `  ${safeKey(t.name)}: ${stripPx(getValue(t))},`).join('\n');
+    tokens.map((t) => `  ${safeKey(t.name)}: ${stripPx(t.$value)},`).join('\n');
 
   /**
    * Parse a CSS font shorthand or composite object into individual properties.
@@ -39,7 +34,7 @@ export function generateTokensTs(lightTokens, darkTokens) {
    * Test inputs pass a plain object with $value = { fontFamily, fontWeight, fontSize, lineHeight, ... }.
    */
   const parseTypoValue = (t) => {
-    const raw = getValue(t);
+    const raw = t.$value;
 
     // If value is already a plain object (test fixture format), use it directly
     if (raw && typeof raw === 'object') return raw;
