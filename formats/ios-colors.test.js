@@ -32,3 +32,23 @@ test('handles 8-digit hex with alpha', () => {
   const out = iosColorsFormat({ dictionary: dict, options: { namespace: 'LightColors' } });
   assert.match(out, /Color\(red: 0(?:\.0+)?, green: 0(?:\.0+)?, blue: 0(?:\.0+)?, opacity: 0\.66[\d]*\)/);
 });
+
+test('handles rgba() values emitted by SD v5 for alpha tokens', () => {
+  const dict = { allTokens: [
+    { name: 'colorsOverlay', $type: 'color', $value: 'rgba(255, 255, 255, 0.98)' },
+    { name: 'colorsSemiTransparent', $type: 'color', $value: 'rgba(0, 0, 0, 0.5)' },
+  ]};
+  const out = iosColorsFormat({ dictionary: dict, options: { namespace: 'LightColors' } });
+  assert.match(out, /colorsOverlay = Color\(red: 1, green: 1, blue: 1, opacity: 0\.98\)/);
+  assert.match(out, /colorsSemiTransparent = Color\(red: 0, green: 0, blue: 0, opacity: 0\.5\)/);
+});
+
+test('filters out gradient tokens ($type=color but value is linear-gradient)', () => {
+  const dict = { allTokens: [
+    { name: 'gradientBrand', $type: 'color', $value: 'linear-gradient(to right, #5645E8, #7F7FFF)' },
+    { name: 'colorsTextPrimary', $type: 'color', $value: '#131722' },
+  ]};
+  const out = iosColorsFormat({ dictionary: dict, options: { namespace: 'LightColors' } });
+  assert.doesNotMatch(out, /gradientBrand/);
+  assert.match(out, /colorsTextPrimary/);
+});
