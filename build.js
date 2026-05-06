@@ -5,6 +5,7 @@ import { generateTokensTs } from './formats/web-ts.js';
 import { iosColorsFormatDef } from './formats/ios-colors.js';
 import { iosSpacingFormatDef } from './formats/ios-spacing.js';
 import { iosTypographyFormatDef } from './formats/ios-typography.js';
+import { androidColorsFormatDef } from './formats/android-colors.js';
 
 // Read the original tokens.json exported by Tokens Studio
 const rawData = fs.readFileSync('./tokens.json', 'utf8');
@@ -16,6 +17,7 @@ register(StyleDictionary);
 StyleDictionary.registerFormat(iosColorsFormatDef);
 StyleDictionary.registerFormat(iosSpacingFormatDef);
 StyleDictionary.registerFormat(iosTypographyFormatDef);
+StyleDictionary.registerFormat(androidColorsFormatDef);
 
 // Custom name transform: kebab-case groups with camelCase leaves
 // e.g. Colors / Text / text-primary (900) → colors-text-textPrimary-900
@@ -127,6 +129,17 @@ const sdLight = new StyleDictionary({
                 },
             ],
         },
+        android: {
+            transformGroup: 'tokens-studio',
+            buildPath: 'android/',
+            files: [
+                {
+                    destination: 'LightColors.kt',
+                    format: 'android/compose-colors',
+                    options: { objectName: 'LightColors' },
+                },
+            ],
+        },
     },
 });
 
@@ -158,6 +171,17 @@ const sdDark = new StyleDictionary({
                     destination: 'ColorsDark.swift',
                     format: 'ios/colors-namespace',
                     options: { namespace: 'DarkColors' },
+                },
+            ],
+        },
+        android: {
+            transformGroup: 'tokens-studio',
+            buildPath: 'android/',
+            files: [
+                {
+                    destination: 'DarkColors.kt',
+                    format: 'android/compose-colors',
+                    options: { objectName: 'DarkColors' },
                 },
             ],
         },
