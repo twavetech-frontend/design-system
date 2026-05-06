@@ -11,7 +11,7 @@
     "build": "node build.js",
     "sync-agent": "node sync-to-agent.js --out ../figma-design-agent/ds",
     "build:all": "node build.js && node sync-to-agent.js --out ../figma-design-agent/ds",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test formats/*.test.js"
   },
   "repository": {
     "type": "git",

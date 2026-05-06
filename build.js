@@ -1,6 +1,7 @@
 import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
 import fs from 'fs';
+import { generateTokensTs } from './formats/web-ts.js';
 
 // Read the original tokens.json exported by Tokens Studio
 const rawData = fs.readFileSync('./tokens.json', 'utf8');
@@ -127,5 +128,11 @@ const sdDark = new StyleDictionary({
 });
 
 await sdDark.buildAllPlatforms();
+
+// Generate web/tokens.ts (combined light+dark) using transformed dictionaries
+const lightDict = await sdLight.getPlatformTokens('css');
+const darkDict = await sdDark.getPlatformTokens('css');
+fs.writeFileSync('web/tokens.ts', generateTokensTs(lightDict.allTokens, darkDict.allTokens));
+console.log('✓ web/tokens.ts (light + dark merged)');
 
 console.log('✅ tokens.css (light) + tokens-dark.css (dark) generated');
