@@ -113,6 +113,14 @@ const sdLight = new StyleDictionary({
                 },
             ],
         },
+        ios: {
+            transformGroup: 'tokens-studio',
+            // files is empty — used only to obtain pure-camelCase token names
+            // via getPlatformTokens('ios') for the post-build iOS generators
+            // (Asset Catalog + DS accessors). Actual file emission happens via
+            // direct fs.writeFileSync below.
+            files: [],
+        },
         android: {
             transformGroup: 'tokens-studio',
             buildPath: 'android/',
@@ -155,6 +163,14 @@ const sdDark = new StyleDictionary({
                 },
             ],
         },
+        ios: {
+            transformGroup: 'tokens-studio',
+            // files is empty — used only to obtain pure-camelCase token names
+            // via getPlatformTokens('ios') for the post-build iOS generators
+            // (Asset Catalog + DS accessors). Actual file emission happens via
+            // direct fs.writeFileSync below.
+            files: [],
+        },
         android: {
             transformGroup: 'tokens-studio',
             buildPath: 'android/',
@@ -182,10 +198,16 @@ console.log('✅ tokens.css (light) + tokens-dark.css (dark) generated');
 // iOS — Asset Catalog (multi-file) + 4 DS accessors
 console.log('iOS outputs:');
 
+// Obtain pure-camelCase token names via the 'ios' platform (tokens-studio transform group).
+// The 'css' platform uses 'custom-tokens-studio' (kebab-camel hybrid) which produces
+// identifiers like 'base-black' — invalid Swift. 'tokens-studio' produces 'baseBlack'.
+const lightIos = await sdLight.getPlatformTokens('ios');
+const darkIos = await sdDark.getPlatformTokens('ios');
+
 // 1) Asset Catalog: root meta + folder provider + colorsets
 const { files: catalogFiles, warnings: catalogWarnings } = generateAssetCatalog({
-    lightColors: lightDict.allTokens,
-    darkColors: darkDict.allTokens,
+    lightColors: lightIos.allTokens,
+    darkColors: darkIos.allTokens,
 });
 for (const [filepath, content] of catalogFiles) {
     fs.mkdirSync(path.dirname(filepath), { recursive: true });
@@ -195,16 +217,16 @@ for (const w of catalogWarnings) console.warn(`  ⚠ ${w}`);
 console.log(`  ✓ ios/Assets.xcassets/ (${catalogFiles.size} files)`);
 
 // 2) DSColor accessor
-fs.writeFileSync('ios/DSColor+Generated.swift', generateDSColorAccessor(lightDict.allTokens));
+fs.writeFileSync('ios/DSColor+Generated.swift', generateDSColorAccessor(lightIos.allTokens));
 console.log('  ✓ ios/DSColor+Generated.swift');
 
 // 3) DSSpacing + DSRadius
-const { spacingContent, radiusContent } = generateDSSpacing(lightDict.allTokens);
+const { spacingContent, radiusContent } = generateDSSpacing(lightIos.allTokens);
 fs.writeFileSync('ios/DSSpacing+Generated.swift', spacingContent);
 fs.writeFileSync('ios/DSRadius+Generated.swift', radiusContent);
 console.log('  ✓ ios/DSSpacing+Generated.swift');
 console.log('  ✓ ios/DSRadius+Generated.swift');
 
 // 4) DSFont
-fs.writeFileSync('ios/DSFont+Generated.swift', generateDSFont(lightDict.allTokens));
+fs.writeFileSync('ios/DSFont+Generated.swift', generateDSFont(lightIos.allTokens));
 console.log('  ✓ ios/DSFont+Generated.swift');
