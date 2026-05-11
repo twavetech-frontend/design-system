@@ -1,10 +1,12 @@
 import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
 import fs from 'fs';
+import path from 'node:path';
 import { generateTokensTs } from './formats/web-ts.js';
-import { iosColorsFormatDef } from './formats/ios-colors.js';
-import { iosSpacingFormatDef } from './formats/ios-spacing.js';
-import { iosTypographyFormatDef } from './formats/ios-typography.js';
+import { generateAssetCatalog } from './formats/ios-asset-catalog.js';
+import { generateDSColorAccessor } from './formats/ios-ds-color-accessor.js';
+import { generateDSSpacing } from './formats/ios-ds-spacing.js';
+import { generateDSFont } from './formats/ios-ds-font.js';
 import { androidColorsFormatDef } from './formats/android-colors.js';
 import { androidSpacingFormatDef } from './formats/android-spacing.js';
 import { androidTypographyFormatDef } from './formats/android-typography.js';
@@ -16,9 +18,6 @@ const allTokens = JSON.parse(rawData);
 // Register all Tokens Studio transforms
 register(StyleDictionary);
 
-StyleDictionary.registerFormat(iosColorsFormatDef);
-StyleDictionary.registerFormat(iosSpacingFormatDef);
-StyleDictionary.registerFormat(iosTypographyFormatDef);
 StyleDictionary.registerFormat(androidColorsFormatDef);
 StyleDictionary.registerFormat(androidSpacingFormatDef);
 StyleDictionary.registerFormat(androidTypographyFormatDef);
@@ -114,25 +113,6 @@ const sdLight = new StyleDictionary({
                 },
             ],
         },
-        ios: {
-            transformGroup: 'tokens-studio',
-            buildPath: 'ios/',
-            files: [
-                {
-                    destination: 'ColorsLight.swift',
-                    format: 'ios/colors-namespace',
-                    options: { namespace: 'LightColors' },
-                },
-                {
-                    destination: 'Spacing.swift',
-                    format: 'ios/spacing-radius',
-                },
-                {
-                    destination: 'Typography.swift',
-                    format: 'ios/typography-font',
-                },
-            ],
-        },
         android: {
             transformGroup: 'tokens-studio',
             buildPath: 'android/',
@@ -175,17 +155,6 @@ const sdDark = new StyleDictionary({
                 },
             ],
         },
-        ios: {
-            transformGroup: 'tokens-studio',
-            buildPath: 'ios/',
-            files: [
-                {
-                    destination: 'ColorsDark.swift',
-                    format: 'ios/colors-namespace',
-                    options: { namespace: 'DarkColors' },
-                },
-            ],
-        },
         android: {
             transformGroup: 'tokens-studio',
             buildPath: 'android/',
@@ -209,3 +178,33 @@ fs.writeFileSync('web/tokens.ts', generateTokensTs(lightDict.allTokens, darkDict
 console.log('✓ web/tokens.ts (light + dark merged)');
 
 console.log('✅ tokens.css (light) + tokens-dark.css (dark) generated');
+
+// iOS — Asset Catalog (multi-file) + 4 DS accessors
+console.log('iOS outputs:');
+
+// 1) Asset Catalog: root meta + folder provider + colorsets
+const { files: catalogFiles, warnings: catalogWarnings } = generateAssetCatalog({
+    lightColors: lightDict.allTokens,
+    darkColors: darkDict.allTokens,
+});
+for (const [filepath, content] of catalogFiles) {
+    fs.mkdirSync(path.dirname(filepath), { recursive: true });
+    fs.writeFileSync(filepath, content);
+}
+for (const w of catalogWarnings) console.warn(`  ⚠ ${w}`);
+console.log(`  ✓ ios/Assets.xcassets/ (${catalogFiles.size} files)`);
+
+// 2) DSColor accessor
+fs.writeFileSync('ios/DSColor+Generated.swift', generateDSColorAccessor(lightDict.allTokens));
+console.log('  ✓ ios/DSColor+Generated.swift');
+
+// 3) DSSpacing + DSRadius
+const { spacingContent, radiusContent } = generateDSSpacing(lightDict.allTokens);
+fs.writeFileSync('ios/DSSpacing+Generated.swift', spacingContent);
+fs.writeFileSync('ios/DSRadius+Generated.swift', radiusContent);
+console.log('  ✓ ios/DSSpacing+Generated.swift');
+console.log('  ✓ ios/DSRadius+Generated.swift');
+
+// 4) DSFont
+fs.writeFileSync('ios/DSFont+Generated.swift', generateDSFont(lightDict.allTokens));
+console.log('  ✓ ios/DSFont+Generated.swift');
