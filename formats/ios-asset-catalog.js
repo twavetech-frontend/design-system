@@ -2,13 +2,16 @@ const ROOT_DIR = 'ios/Assets.xcassets';
 const COLORS_DIR = `${ROOT_DIR}/Colors`;
 
 function isPlainColor(value) {
-  return typeof value === 'string' && (value.startsWith('#') || /^rgba?\s*\(/i.test(value));
+  if (typeof value !== 'string') return false;
+  const v = value.trim();
+  return v.startsWith('#') || /^rgba?\s*\(/i.test(v);
 }
 
 function parseColor(value) {
   if (typeof value !== 'string') return null;
-  if (value.startsWith('#')) {
-    let h = value.slice(1);
+  const v = value.trim();
+  if (v.startsWith('#')) {
+    let h = v.slice(1);
     if (h.length === 3) h = h.split('').map((c) => c + c).join('') + 'ff';
     else if (h.length === 6) h += 'ff';
     if (h.length !== 8) return null;
@@ -19,7 +22,7 @@ function parseColor(value) {
       a: parseInt(h.slice(6, 8), 16) / 255,
     };
   }
-  const m = value.match(/^rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*(\d*\.?\d+)\s*)?\)$/i);
+  const m = v.match(/^rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*(\d*\.?\d+)\s*)?\)$/i);
   if (!m) return null;
   return {
     r: Number(m[1]) / 255,

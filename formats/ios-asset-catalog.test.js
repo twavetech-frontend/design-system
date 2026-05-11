@@ -75,6 +75,16 @@ test('parses rgba() values (SD v5 emits alpha tokens as rgba)', () => {
   });
 });
 
+test('parses 3-digit hex shorthand', () => {
+  const light = [{ name: 'colorsShort', $type: 'color', $value: '#abc' }];
+  const { files } = generateAssetCatalog({ lightColors: light, darkColors: [] });
+  const content = JSON.parse(files.get(path('colorsShort')));
+  // #abc → #aabbcc → r=0xaa/255, g=0xbb/255, b=0xcc/255 (alpha defaults to 1.000)
+  assert.deepEqual(content.colors[0].color.components, {
+    red: '0.667', green: '0.733', blue: '0.800', alpha: '1.000',
+  });
+});
+
 test('rounds components to 3 decimal places', () => {
   const light = [{ name: 'colorsX', $type: 'color', $value: '#131722' }];
   const { files } = generateAssetCatalog({ lightColors: light, darkColors: [] });
