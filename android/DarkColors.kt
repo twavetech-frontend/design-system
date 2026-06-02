@@ -350,8 +350,6 @@ object DarkColors {
     val colorsEffectsShadowsShadowMd02 = Color(0x00FFFFFF)
     val colorsEffectsShadowsShadowXl01 = Color(0x00FFFFFF)
     val colorsEffectsShadowsShadowXl02 = Color(0x00FFFFFF)
-    val colorsEffectsShadowsShadowSkeumorphicInner = Color(0x0D0C0E12)
-    val colorsEffectsShadowsShadowSkeumorphicInnerBorder = Color(0x2E0C0E12)
     val colorsEffectsShadowsShadowLg03 = Color(0x00FFFFFF)
     val colorsEffectsShadowsShadowXl03 = Color(0x00FFFFFF)
     val colorsEffectsShadowsShadow2xl02 = Color(0x00FFFFFF)
