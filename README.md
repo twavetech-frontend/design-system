@@ -1,6 +1,6 @@
 # design-system
 
-figma에서 token studio 연동 test git
+figma에서 token studio for figma plugin을 통한 자동 push 됩니다.
 
 ## Outputs
 
