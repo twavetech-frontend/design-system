@@ -773,6 +773,13 @@
   --carmenSans-extraBold-16px: 800 16px/24 'Carmen Sans';
   --carmenSans-extraBold-14px: 800 14px/20 'Carmen Sans';
   --carmenSans-extraBold-12px: 800 12px/18 'Carmen Sans';
+  --carmenSans-headingLg-extraBold: 400 60px/28 'Carmen Sans';
+  --carmenSans-headingLg-bold: 700 60px/28 'Carmen Sans';
+  --carmenSans-headingLg-regular: 800 60px/28 'Carmen Sans';
+  --carmenSans-bodyMd-regualr: 800 18px/24 'Carmen Sans';
+  --carmenSans-bodyXs-extraBold: 400 14px/18 'Carmen Sans';
+  --carmenSans-bodyXs-bold: 700 14px/18 'Carmen Sans';
+  --carmenSans-bodyXs-regular: 800 14px/18 'Carmen Sans';
   --red-25: #fdf6f6;
   --red-50: #f9eaea;
   --red-100: #f3cfcf;
@@ -788,6 +795,7 @@
   --fontFamily-fontFamilyDisplay: Pretendard;
   --fontFamily-fontFamilyBody: Pretendard;
   --fontFamily-fontFamilyHeading: Pretendard;
+  --fontFamily-fontFamilyGraphic: 'Carmen Sans';
   --fontWeight-regular: Regular;
   --fontWeight-regularItalic: Regular italic;
   --fontWeight-medium: Medium;
@@ -890,6 +898,10 @@
   --radius5xl: 28;
   --radius6xl: 32;
   --diabledOpacity: 50;
+  --bodyXxs-regular: 400 12px/14 Pretendard;
+  --bodyXxs-medium: 500 12px/14 Pretendard;
+  --bodyXxs-semibold: 600 12px/14 Pretendard;
+  --bodyXxs-bold: 700 12px/14 Pretendard;
   --componentColors-utility-blue-utilityBlue600: #46a8ff;
   --componentColors-utility-blue-utilityBlue700: #6ebeff;
   --componentColors-utility-blue-utilityBlue500: #2896ff;
