@@ -47,11 +47,24 @@ const ALIAS_MAP = {
 (function applyTypographyAliases() {
     const set = allTokens[TYPOGRAPHY_SET];
     if (!set) return;
+    // Only alias names that are actually still referenced somewhere, so the
+    // guard self-disables (and stops warning) once the source is relinked.
+    // Walk the parsed tree (not raw text) so references nested inside
+    // composite typography values (fontFamily/lineHeight/...) are captured.
+    const referenced = new Set();
+    (function collect(node) {
+        if (typeof node === 'string') {
+            for (const m of node.matchAll(/\{([^}]+)\}/g)) referenced.add(m[1]);
+        } else if (node && typeof node === 'object') {
+            for (const v of Object.values(node)) collect(v);
+        }
+    })(allTokens);
     const applied = [];
     for (const [group, aliases] of Object.entries(ALIAS_MAP)) {
         const groupTokens = set[group];
         if (!groupTokens) continue;
         for (const [oldName, newName] of Object.entries(aliases)) {
+            if (!referenced.has(`${group}.${oldName}`)) continue;
             if (groupTokens[oldName] === undefined && groupTokens[newName] !== undefined) {
                 // Clone the new token's concrete value under the old name.
                 groupTokens[oldName] = JSON.parse(JSON.stringify(groupTokens[newName]));
