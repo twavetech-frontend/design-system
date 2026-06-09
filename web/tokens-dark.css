@@ -776,9 +776,9 @@
   --carmenSans-headingLg-extraBold: 800 40px/48 'Carmen Sans';
   --carmenSans-headingLg-bold: 700 40px/48 'Carmen Sans';
   --carmenSans-headingLg-regular: 400 40px/48 'Carmen Sans';
-  --carmenSans-bodyXs-extraBold: 400 14px/18 'Carmen Sans';
-  --carmenSans-bodyXs-bold: 700 14px/18 'Carmen Sans';
-  --carmenSans-bodyXs-regular: 800 14px/18 'Carmen Sans';
+  --carmenSans-bodyXs-extraBold: 800 12px/18 'Carmen Sans';
+  --carmenSans-bodyXs-bold: 700 12px/18 'Carmen Sans';
+  --carmenSans-bodyXs-regular: 400 12px/18 'Carmen Sans';
   --carmenSans-headingMd-extraBold: 800 32px/40 'Carmen Sans';
   --carmenSans-headingMd-bold: 700 32px/40 'Carmen Sans';
   --carmenSans-headingMd-regular: 400 32px/40 'Carmen Sans';
@@ -788,6 +788,9 @@
   --carmenSans-headingSm-extraBold: 800 24px/32 'Carmen Sans';
   --carmenSans-headingSm-bold: 700 24px/32 'Carmen Sans';
   --carmenSans-headingSm-regular: 400 24px/32 'Carmen Sans';
+  --carmenSans-bodySm-extraBold: 800 14px/20 'Carmen Sans';
+  --carmenSans-bodySm-bold: 700 14px/20 'Carmen Sans';
+  --carmenSans-bodySm-regular: 400 14px/20 'Carmen Sans';
   --red-25: #fdf6f6;
   --red-50: #f9eaea;
   --red-100: #f3cfcf;
@@ -836,6 +839,7 @@
   --fontFamily-fontFamilyHeading: Pretendard;
   --fontFamily-fontFamilyBody: Pretendard;
   --fontFamily-fontFamilyGraphic: 'Carmen Sans';
+  --fontFamily-fontFamilyDisplay: Pretendard;
   --fontWeight-regular: Regular;
   --fontWeight-medium: Medium;
   --fontWeight-semibold: Semibold;
@@ -864,6 +868,17 @@
   --lineHeight-headingXl: 72;
   --lineHeight-heading2xl: 90;
   --lineHeight-bodyXxs: 14;
+  --lineHeight-display2xl: 90;
+  --lineHeight-displayXl: 72;
+  --lineHeight-displayLg: 60;
+  --lineHeight-displayMd: 44;
+  --lineHeight-displaySm: 38;
+  --lineHeight-displayXs: 32;
+  --lineHeight-textXl: 30;
+  --lineHeight-textLg: 28;
+  --lineHeight-textMd: 24;
+  --lineHeight-textSm: 20;
+  --lineHeight-textXs: 18;
   --bodyXxs-regular: 400 12px/14 Pretendard;
   --bodyXxs-medium: 500 12px/14 Pretendard;
   --bodyXxs-semibold: 600 12px/14 Pretendard;
