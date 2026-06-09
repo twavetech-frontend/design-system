@@ -15,6 +15,56 @@ import { androidTypographyFormatDef } from './formats/android-typography.js';
 const rawData = fs.readFileSync('./tokens.json', 'utf8');
 const allTokens = JSON.parse(rawData);
 
+// --- Backward-compat alias guard for renamed typography primitives -------
+// Token Studio renamed the Line height primitives display-*/text-* ->
+// heading-*/body-* and dropped Font family.font-family-display (folded into
+// font-family-heading). Text styles in the Figma source can still reference
+// the old names until someone relinks them in Token Studio, which breaks the
+// build with "references could not be found". This guard aliases each old
+// name to its new token — but ONLY when the old name is absent and the new
+// one exists, so it self-disables the moment the source is fixed (and never
+// shadows a name Token Studio later re-introduces).
+const TYPOGRAPHY_SET = '4. Typography/Value';
+const ALIAS_MAP = {
+    'Line height': {
+        'display-2xl': 'heading-2xl',
+        'display-xl': 'heading-xl',
+        'display-lg': 'heading-lg',
+        'display-md': 'heading-md',
+        'display-sm': 'heading-sm',
+        'display-xs': 'heading-xs',
+        'text-xl': 'body-xl',
+        'text-lg': 'body-lg',
+        'text-md': 'body-md',
+        'text-sm': 'body-sm',
+        'text-xs': 'body-xs',
+    },
+    'Font family': {
+        'font-family-display': 'font-family-heading',
+    },
+};
+
+(function applyTypographyAliases() {
+    const set = allTokens[TYPOGRAPHY_SET];
+    if (!set) return;
+    const applied = [];
+    for (const [group, aliases] of Object.entries(ALIAS_MAP)) {
+        const groupTokens = set[group];
+        if (!groupTokens) continue;
+        for (const [oldName, newName] of Object.entries(aliases)) {
+            if (groupTokens[oldName] === undefined && groupTokens[newName] !== undefined) {
+                // Clone the new token's concrete value under the old name.
+                groupTokens[oldName] = JSON.parse(JSON.stringify(groupTokens[newName]));
+                applied.push(`${group}.${oldName} -> ${newName}`);
+            }
+        }
+    }
+    if (applied.length) {
+        console.warn(`⚠ typography alias guard active (${applied.length}) — relink these in Token Studio:`);
+        applied.forEach((a) => console.warn(`    ${a}`));
+    }
+})();
+
 // Register all Tokens Studio transforms
 register(StyleDictionary);
 
