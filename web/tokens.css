@@ -557,24 +557,14 @@
   --gradient-brand-gradient5~4: linear-gradient(90deg, #7700ff 20%, #9b55ff 100%);
   --gradient-brand-gradient5~3: linear-gradient(90deg, #7700ff 20%, #b685ff 100%);
   --shadows-shadowXs: 0 1px 2px 0 #0a0d120d; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
-  /**
-   * Used to create a subtle skeuomorphic effect in components such as buttons and tabs.
-   * 
-   * This can be removed or replaced with shadow-xs if you prefer a flat style.
-   */
-  --shadows-shadowXsSkeuomorphic: inset 0 0 0 1px #0a0d122e, inset 0 -2px 0 0 #0a0d120d, 0 1px 2px 0 #0a0d120d;
   --shadows-shadowSm: 0 1px 3px 0 #0a0d121a, 0 1px 2px -1px #0a0d121a; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
   --shadows-shadowMd: 0 4px 6px -1px #0a0d1214, 0 2px 4px -2px #0a0d120f; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
   --shadows-shadowLg: 0 12px 16px -4px #0a0d1214, 0 4px 6px -2px #0a0d1208, 0 2px 2px -1px #0a0d120a; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
   --shadows-shadowXl: 0 20px 24px -4px #0a0d1214, 0 8px 8px -4px #0a0d1208, 0 3px 3px -1.5px #0a0d120a; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
   --shadows-shadow2xl: 0 24px 48px -12px #0a0d122e, 0 4px 4px -2px #0a0d120a; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
   --shadows-shadow3xl: 0 32px 64px -12px #0a0d1224, 0 5px 5px -2.5px #0a0d120a; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
-  --shadows-portfolioMockups-shadowMainCentreMd: 0 75px 150px 0 #0a0d1224; /** Used for portfolio mockup layouts. */
-  --shadows-portfolioMockups-shadowMainCentreLg: 0 100px 200px 0 #0a0d122e; /** Used for portfolio mockup layouts. */
-  --shadows-portfolioMockups-shadowOverlayRightLg: -40px 40px 72px 0 #0a0d121f; /** Used for portfolio mockup layouts. */
-  --shadows-portfolioMockups-shadowOverlayLeftLg: 100px 100px 150px 0 #0a0d121f; /** Used for portfolio mockup layouts. */
-  --shadows-portfolioMockups-shadowGridMd: 32px 32px 64px 0 #0a0d1214; /** Used for portfolio mockup layouts. */
   --shadows-shadow4xl: 0 21px 120px -12px #0a0d1224, 0 14px 60px -2.5px #0a0d120a; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
+  --shadows-shadowBasic: inset 0 0 0 1px #0a0d1214, 0 10px 24px 0 #0a0d120a; /** 컨텐츠 기본 그림자 타입 */
   --focusRings-focusRing: 0 0 0 2px #fcfcfd, 0 0 0 4px #7700ff; /** Used for focus states in components. For example toggles and checkboxes. */
   --focusRings-focusRingShadowXs: 0 1px 2px 0 #0a0d120d, 0 0 0 2px #fcfcfd, 0 0 0 4px #7700ff; /** Used for focus states in components that also require a shadow. For example, buttons and tabs. */
   /**
@@ -592,17 +582,17 @@
    * This can be replaced with focus-ring-error-shadow-xs if you prefer a flat style.
    */
   --focusRings-focusRingErrorShadowXsSkeuomorphic: 0 0 0 2px #fcfcfd, 0 0 0 4px #f04438;
-  --fontSize-0: 12px;
-  --fontSize-1: 14px;
-  --fontSize-2: 16px;
-  --fontSize-3: 18px;
-  --fontSize-4: 20px;
-  --fontSize-5: 24px;
-  --fontSize-6: 30px;
-  --fontSize-7: 32px;
-  --fontSize-8: 36px;
-  --fontSize-9: 48px;
-  --fontSize-10: 60px;
+  --fontSize-0: 10px;
+  --fontSize-1: 12px;
+  --fontSize-2: 14px;
+  --fontSize-3: 16px;
+  --fontSize-4: 18px;
+  --fontSize-5: 20px;
+  --fontSize-6: 24px;
+  --fontSize-7: 30px;
+  --fontSize-8: 32px;
+  --fontSize-9: 36px;
+  --fontSize-10: 40px;
   --fontSize-11: 72px;
   --letterSpacing-0: -0.02em;
   --letterSpacing-1: 0em;
@@ -618,34 +608,34 @@
   --paragraphSpacing-8: 48px;
   --paragraphSpacing-9: 60px;
   --paragraphSpacing-10: 72px;
-  --headingMd-regular: 400 36px/44 Pretendard;
-  --headingMd-medium: 500 36px/44 Pretendard;
-  --headingMd-semibold: 600 36px/44 Pretendard;
-  --headingMd-bold: 700 36px/44 Pretendard;
-  --headingSm-regular: 400 30px/38 Pretendard;
-  --headingSm-medium: 500 30px/38 Pretendard;
-  --headingSm-semibold: 600 30px/38 Pretendard;
-  --headingSm-bold: 700 30px/38 Pretendard;
-  --headingXs-regular: 400 24px/32 Pretendard;
-  --headingXs-medium: 500 24px/32 Pretendard;
-  --headingXs-semibold: 600 24px/32 Pretendard;
-  --headingXs-bold: 700 24px/38 Pretendard;
-  --bodyLg-regular: 400 18px/28 Pretendard;
-  --bodyLg-medium: 500 18px/28 Pretendard;
-  --bodyLg-semibold: 600 18px/28 Pretendard;
-  --bodyLg-bold: 700 18px/28 Pretendard;
-  --bodyMd-regular: 400 16px/24 Pretendard;
-  --bodyMd-medium: 500 16px/24 Pretendard;
-  --bodyMd-semibold: 600 16px/24 Pretendard;
-  --bodyMd-bold: 700 16px/24 Pretendard;
-  --bodySm-regular: 400 14px/20 Pretendard;
-  --bodySm-medium: 500 14px/20 Pretendard;
-  --bodySm-semibold: 600 14px/20 Pretendard;
-  --bodySm-bold: 700 14px/20 Pretendard;
-  --bodyXs-regular: 400 12px/14 Pretendard;
-  --bodyXs-medium: 500 12px/14 Pretendard;
-  --bodyXs-semibold: 600 12px/14 Pretendard;
-  --bodyXs-bold: 700 12px/14 Pretendard;
+  --headingMd-regular: 400 32px/44 Pretendard;
+  --headingMd-medium: 500 32px/44 Pretendard;
+  --headingMd-semibold: 600 32px/44 Pretendard;
+  --headingMd-bold: 700 32px/44 Pretendard;
+  --headingSm-regular: 400 24px/38 Pretendard;
+  --headingSm-medium: 500 24px/38 Pretendard;
+  --headingSm-semibold: 600 24px/38 Pretendard;
+  --headingSm-bold: 700 24px/38 Pretendard;
+  --headingXs-regular: 400 20px/32 Pretendard;
+  --headingXs-medium: 500 20px/32 Pretendard;
+  --headingXs-semibold: 600 20px/32 Pretendard;
+  --headingXs-bold: 700 20px/38 Pretendard;
+  --bodyLg-regular: 400 16px/28 Pretendard;
+  --bodyLg-medium: 500 16px/28 Pretendard;
+  --bodyLg-semibold: 600 16px/28 Pretendard;
+  --bodyLg-bold: 700 16px/28 Pretendard;
+  --bodyMd-regular: 400 14px/24 Pretendard;
+  --bodyMd-medium: 500 14px/24 Pretendard;
+  --bodyMd-semibold: 600 14px/24 Pretendard;
+  --bodyMd-bold: 700 14px/24 Pretendard;
+  --bodySm-regular: 400 12px/20 Pretendard;
+  --bodySm-medium: 500 12px/20 Pretendard;
+  --bodySm-semibold: 600 12px/20 Pretendard;
+  --bodySm-bold: 700 12px/20 Pretendard;
+  --bodyXs-regular: 400 10px/14 Pretendard;
+  --bodyXs-medium: 500 10px/14 Pretendard;
+  --bodyXs-semibold: 600 10px/14 Pretendard;
+  --bodyXs-bold: 700 10px/14 Pretendard;
   --textCase-none: none;
   --textDecoration-none: none;
   --paragraphIndent-0: 0px;
@@ -682,27 +672,27 @@
   --lineHeights-29: 18;
   --lineHeights-30: 40;
   --lineHeights-31: 32;
-  --lineHeights-32: 28;
-  --lineHeights-33: 24;
-  --lineHeights-34: 20;
-  --lineHeights-35: 18;
+  --lineHeights-32: 48;
+  --lineHeights-33: 48;
+  --lineHeights-34: 48;
+  --lineHeights-35: 40;
   --lineHeights-36: 40;
-  --lineHeights-37: 32;
-  --lineHeights-38: 28;
-  --lineHeights-39: 24;
-  --lineHeights-40: 20;
-  --lineHeights-41: 18;
-  --lineHeights-42: 40;
-  --lineHeights-43: 32;
-  --lineHeights-44: 28;
+  --lineHeights-37: 40;
+  --lineHeights-38: 32;
+  --lineHeights-39: 32;
+  --lineHeights-40: 32;
+  --lineHeights-41: 28;
+  --lineHeights-42: 28;
+  --lineHeights-43: 28;
+  --lineHeights-44: 24;
   --lineHeights-45: 24;
-  --lineHeights-46: 20;
-  --lineHeights-47: 18;
-  --lineHeights-48: 40;
-  --lineHeights-49: 32;
-  --lineHeights-50: 28;
-  --lineHeights-51: 24;
-  --lineHeights-52: 20;
+  --lineHeights-46: 24;
+  --lineHeights-47: 20;
+  --lineHeights-48: 20;
+  --lineHeights-49: 20;
+  --lineHeights-50: 18;
+  --lineHeights-51: 18;
+  --lineHeights-52: 18;
   --lineHeights-53: 18;
   --lineHeights-54: 40;
   --lineHeights-55: 32;
@@ -730,51 +720,51 @@
   --lineHeights-77: 24;
   --lineHeights-78: 20;
   --lineHeights-79: 18;
-  --fontWeights-carmenSans4: 400;
+  --fontWeights-carmenSans4: 800;
   --fontWeights-carmenSans5: 700;
-  --fontWeights-carmenSans6: 800;
-  --carmenSans-regular-32px: 400 32px/40 'Carmen Sans';
-  --carmenSans-regular-24px: 400 24px/32 'Carmen Sans';
-  --carmenSans-regular-20px: 400 20px/28 'Carmen Sans';
-  --carmenSans-regular-16px: 400 16px/24 'Carmen Sans';
-  --carmenSans-regular-14px: 400 14px/20 'Carmen Sans';
-  --carmenSans-regular-12px: 400 12px/18 'Carmen Sans';
-  --carmenSans-bold-32px: 700 32px/40 'Carmen Sans';
-  --carmenSans-bold-24px: 700 24px/32 'Carmen Sans';
-  --carmenSans-bold-20px: 700 20px/28 'Carmen Sans';
-  --carmenSans-bold-16px: 700 16px/24 'Carmen Sans';
-  --carmenSans-bold-14px: 700 14px/20 'Carmen Sans';
-  --carmenSans-bold-12px: 700 12px/18 'Carmen Sans';
-  --carmenSans-extraBold-32px: 800 32px/40 'Carmen Sans';
-  --carmenSans-extraBold-24px: 800 24px/32 'Carmen Sans';
-  --carmenSans-extraBold-20px: 800 20px/28 'Carmen Sans';
-  --carmenSans-extraBold-16px: 800 16px/24 'Carmen Sans';
-  --carmenSans-extraBold-14px: 800 14px/20 'Carmen Sans';
-  --carmenSans-extraBold-12px: 800 12px/18 'Carmen Sans';
-  --carmenSans-headingLg-extraBold: 800 40px/48 'Carmen Sans';
+  --fontWeights-carmenSans6: 400;
+  --carmenSans-regular-32px: 800 30px/40 'Carmen Sans';
+  --carmenSans-regular-24px: 800 20px/32 'Carmen Sans';
+  --carmenSans-regular-20px: 800 18px/28 'Carmen Sans';
+  --carmenSans-regular-16px: 800 14px/24 'Carmen Sans';
+  --carmenSans-regular-14px: 800 12px/20 'Carmen Sans';
+  --carmenSans-regular-12px: 800 10px/18 'Carmen Sans';
+  --carmenSans-bold-32px: 700 30px/40 'Carmen Sans';
+  --carmenSans-bold-24px: 700 20px/32 'Carmen Sans';
+  --carmenSans-bold-20px: 700 18px/28 'Carmen Sans';
+  --carmenSans-bold-16px: 700 14px/24 'Carmen Sans';
+  --carmenSans-bold-14px: 700 12px/20 'Carmen Sans';
+  --carmenSans-bold-12px: 700 10px/18 'Carmen Sans';
+  --carmenSans-extraBold-32px: 400 30px/40 'Carmen Sans';
+  --carmenSans-extraBold-24px: 400 20px/32 'Carmen Sans';
+  --carmenSans-extraBold-20px: 400 18px/28 'Carmen Sans';
+  --carmenSans-extraBold-16px: 400 14px/24 'Carmen Sans';
+  --carmenSans-extraBold-14px: 400 12px/20 'Carmen Sans';
+  --carmenSans-extraBold-12px: 400 10px/18 'Carmen Sans';
+  --carmenSans-bodyMd-extraBold: 800 12px/20 'Carmen Sans';
+  --carmenSans-bodyMd-bold: 700 12px/20 'Carmen Sans';
+  --carmenSans-bodyMd-regular: 400 12px/20 'Carmen Sans';
+  --carmenSans-headingLg-extraBold: 400 40px/48 'Carmen Sans';
   --carmenSans-headingLg-bold: 700 40px/48 'Carmen Sans';
-  --carmenSans-headingLg-regular: 400 40px/48 'Carmen Sans';
-  --carmenSans-bodyXs-extraBold: 800 12px/18 'Carmen Sans';
-  --carmenSans-bodyXs-bold: 700 12px/18 'Carmen Sans';
-  --carmenSans-bodyXs-regular: 400 12px/18 'Carmen Sans';
-  --carmenSans-headingMd-extraBold: 400 32px/20 'Carmen Sans';
-  --carmenSans-headingMd-bold: 700 32px/20 'Carmen Sans';
-  --carmenSans-headingMd-regular: 800 32px/20 'Carmen Sans';
-  --carmenSans-headingXs-extraBold: 400 20px/28 'Carmen Sans';
-  --carmenSans-headingXs-bold: 700 20px/28 'Carmen Sans';
-  --carmenSans-headingXs-regular: 800 20px/28 'Carmen Sans';
-  --carmenSans-headingSm-extraBold: 400 24px/32 'Carmen Sans';
-  --carmenSans-headingSm-bold: 700 24px/32 'Carmen Sans';
-  --carmenSans-headingSm-regular: 800 24px/32 'Carmen Sans';
-  --carmenSans-bodySm-extraBold: 400 12px/32 'Carmen Sans';
-  --carmenSans-bodySm-bold: 700 12px/32 'Carmen Sans';
-  --carmenSans-bodySm-regular: 800 12px/32 'Carmen Sans';
-  --carmenSans-bodyLg-extraBold: 400 16px/24 'Carmen Sans';
-  --carmenSans-bodyLg-bold: 700 16px/24 'Carmen Sans';
-  --carmenSans-bodyLg-regualr: 800 16px/24 'Carmen Sans';
-  --carmenSans-bodyMd-extraBold: 400 14px/20 'Carmen Sans';
-  --carmenSans-bodyMd-bold: 700 14px/20 'Carmen Sans';
-  --carmenSans-bodyMd-regular: 800 14px/20 'Carmen Sans';
+  --carmenSans-headingLg-regular: 800 40px/48 'Carmen Sans';
+  --carmenSans-bodyXs-extraBold: 400 12px/18 'Carmen Sans';
+  --carmenSans-bodyXs-bold: 700 10px/18 'Carmen Sans';
+  --carmenSans-bodyXs-regular: 800 10px/18 'Carmen Sans';
+  --carmenSans-headingMd-extraBold: 800 30px/20 'Carmen Sans';
+  --carmenSans-headingMd-bold: 700 30px/20 'Carmen Sans';
+  --carmenSans-headingMd-regular: 400 30px/20 'Carmen Sans';
+  --carmenSans-headingXs-extraBold: 800 18px/28 'Carmen Sans';
+  --carmenSans-headingXs-bold: 700 18px/28 'Carmen Sans';
+  --carmenSans-headingXs-regular: 400 18px/28 'Carmen Sans';
+  --carmenSans-headingSm-extraBold: 800 20px/32 'Carmen Sans';
+  --carmenSans-headingSm-bold: 700 20px/32 'Carmen Sans';
+  --carmenSans-headingSm-regular: 400 20px/32 'Carmen Sans';
+  --carmenSans-bodySm-extraBold: 800 10px/28 'Carmen Sans';
+  --carmenSans-bodySm-bold: 700 10px/28 'Carmen Sans';
+  --carmenSans-bodySm-regular: 400 10px/28 'Carmen Sans';
+  --carmenSans-bodyLg-extraBold: 800 14px/24 'Carmen Sans';
+  --carmenSans-bodyLg-bold: 700 14px/24 'Carmen Sans';
+  --carmenSans-bodyLg-regualr: 400 14px/24 'Carmen Sans';
   --red-25: #fdf6f6;
   --red-50: #f9eaea;
   --red-100: #f3cfcf;
@@ -787,10 +777,10 @@
   --red-800: #5c0a16;
   --red-900: #36060d;
   --red-950: #220207;
-  --bodyXxs-regular: 400 12px/14 Pretendard;
-  --bodyXxs-medium: 500 12px/14 Pretendard;
-  --bodyXxs-semibold: 600 12px/14 Pretendard;
-  --bodyXxs-bold: 700 12px/14 Pretendard;
+  --bodyXxs-regular: 400 10px/14 Pretendard;
+  --bodyXxs-medium: 500 10px/14 Pretendard;
+  --bodyXxs-semibold: 600 10px/14 Pretendard;
+  --bodyXxs-bold: 700 10px/14 Pretendard;
   --radiusNone: 0;
   --radiusXxs: 4;
   --radiusXs: 6;
