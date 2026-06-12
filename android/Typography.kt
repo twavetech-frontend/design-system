@@ -33,25 +33,25 @@ object Typography {
     val headingSmRegular = TextStyle(
         fontSize = 24.sp,
         fontWeight = FontWeight.Normal,
-        lineHeight = 38.sp,
+        lineHeight = 40.sp,
     )
 
     val headingSmMedium = TextStyle(
         fontSize = 24.sp,
         fontWeight = FontWeight.Medium,
-        lineHeight = 38.sp,
+        lineHeight = 40.sp,
     )
 
     val headingSmSemibold = TextStyle(
         fontSize = 24.sp,
         fontWeight = FontWeight.SemiBold,
-        lineHeight = 38.sp,
+        lineHeight = 40.sp,
     )
 
     val headingSmBold = TextStyle(
         fontSize = 24.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 38.sp,
+        lineHeight = 40.sp,
     )
 
     val headingXsRegular = TextStyle(
@@ -75,31 +75,31 @@ object Typography {
     val headingXsBold = TextStyle(
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 38.sp,
+        lineHeight = 40.sp,
     )
 
     val bodyLgRegular = TextStyle(
         fontSize = 16.sp,
         fontWeight = FontWeight.Normal,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val bodyLgMedium = TextStyle(
         fontSize = 16.sp,
         fontWeight = FontWeight.Medium,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val bodyLgSemibold = TextStyle(
         fontSize = 16.sp,
         fontWeight = FontWeight.SemiBold,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val bodyLgBold = TextStyle(
         fontSize = 16.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val bodyMdRegular = TextStyle(
@@ -189,7 +189,7 @@ object Typography {
     val carmenSansRegular20px = TextStyle(
         fontSize = 18.sp,
         fontWeight = FontWeight.ExtraBold,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val carmenSansRegular16px = TextStyle(
@@ -225,7 +225,7 @@ object Typography {
     val carmenSansBold20px = TextStyle(
         fontSize = 18.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val carmenSansBold16px = TextStyle(
@@ -261,7 +261,7 @@ object Typography {
     val carmenSansExtraBold20px = TextStyle(
         fontSize = 18.sp,
         fontWeight = FontWeight.Normal,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val carmenSansExtraBold16px = TextStyle(
@@ -309,13 +309,13 @@ object Typography {
     val carmenSansHeadingLgBold = TextStyle(
         fontSize = 40.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 48.sp,
+        lineHeight = 40.sp,
     )
 
     val carmenSansHeadingLgRegular = TextStyle(
         fontSize = 40.sp,
         fontWeight = FontWeight.ExtraBold,
-        lineHeight = 48.sp,
+        lineHeight = 40.sp,
     )
 
     val carmenSansBodyXsExtraBold = TextStyle(
@@ -357,19 +357,19 @@ object Typography {
     val carmenSansHeadingXsExtraBold = TextStyle(
         fontSize = 18.sp,
         fontWeight = FontWeight.ExtraBold,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val carmenSansHeadingXsBold = TextStyle(
         fontSize = 18.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val carmenSansHeadingXsRegular = TextStyle(
         fontSize = 18.sp,
         fontWeight = FontWeight.Normal,
-        lineHeight = 28.sp,
+        lineHeight = 26.sp,
     )
 
     val carmenSansHeadingSmExtraBold = TextStyle(

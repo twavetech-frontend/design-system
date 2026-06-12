@@ -3,16 +3,16 @@ import CoreGraphics
 
 public enum DSRadius {
     public static let none: CGFloat = 0
-    public static let xxs: CGFloat = 4
-    public static let xs: CGFloat = 6
+    public static let xxs: CGFloat = 2
+    public static let xs: CGFloat = 4
     public static let sm: CGFloat = 8
-    public static let md: CGFloat = 10
-    public static let xl: CGFloat = 14
-    public static let xl2: CGFloat = 16
-    public static let xl4: CGFloat = 24
+    public static let md: CGFloat = 12
+    public static let xl: CGFloat = 20
+    public static let xl2: CGFloat = 24
+    public static let xl4: CGFloat = 36
     public static let full: CGFloat = 9999
-    public static let lg: CGFloat = 12
-    public static let xl3: CGFloat = 20
-    public static let xl5: CGFloat = 28
-    public static let xl6: CGFloat = 32
+    public static let lg: CGFloat = 16
+    public static let xl3: CGFloat = 32
+    public static let xl5: CGFloat = 40
+    public static let xl6: CGFloat = 48
 }

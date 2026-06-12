@@ -57,16 +57,16 @@ object Spacing {
 
 object Radius {
     val radiusNone = 0.dp
-    val radiusXxs = 4.dp
-    val radiusXs = 6.dp
+    val radiusXxs = 2.dp
+    val radiusXs = 4.dp
     val radiusSm = 8.dp
-    val radiusMd = 10.dp
-    val radiusXl = 14.dp
-    val radius2xl = 16.dp
-    val radius4xl = 24.dp
+    val radiusMd = 12.dp
+    val radiusXl = 20.dp
+    val radius2xl = 24.dp
+    val radius4xl = 36.dp
     val radiusFull = 9999.dp
-    val radiusLg = 12.dp
-    val radius3xl = 20.dp
-    val radius5xl = 28.dp
-    val radius6xl = 32.dp
+    val radiusLg = 16.dp
+    val radius3xl = 32.dp
+    val radius5xl = 40.dp
+    val radius6xl = 48.dp
 }
