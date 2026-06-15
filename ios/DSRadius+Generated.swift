@@ -14,5 +14,5 @@ public enum DSRadius {
     public static let lg: CGFloat = 16
     public static let xl3: CGFloat = 32
     public static let xl5: CGFloat = 40
-    public static let xl6: CGFloat = 48
+    public static let xl6: CGFloat = 32
 }
