@@ -68,5 +68,5 @@ object Radius {
     val radiusLg = 16.dp
     val radius3xl = 32.dp
     val radius5xl = 40.dp
-    val radius6xl = 32.dp
+    val radius6xl = 48.dp
 }
