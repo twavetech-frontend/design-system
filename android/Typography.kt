@@ -357,19 +357,19 @@ object Typography {
     val carmenSansBodySmExtraBold = TextStyle(
         fontSize = 12.sp,
         fontWeight = FontWeight.ExtraBold,
-        lineHeight = 28.sp,
+        lineHeight = 20.sp,
     )
 
     val carmenSansBodySmBold = TextStyle(
         fontSize = 12.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 28.sp,
+        lineHeight = 20.sp,
     )
 
     val carmenSansBodySmRegular = TextStyle(
         fontSize = 12.sp,
         fontWeight = FontWeight.Normal,
-        lineHeight = 28.sp,
+        lineHeight = 20.sp,
     )
 
     val carmenSansBodyXsExtraBold = TextStyle(
