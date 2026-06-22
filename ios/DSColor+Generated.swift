@@ -42,6 +42,7 @@ public enum DSColor {
     public static let colorsAqua950 = Color("colorsAqua950", bundle: .module)
     public static let colorsBackgroundBgActive = Color("colorsBackgroundBgActive", bundle: .module)
     public static let colorsBackgroundBgBrandPrimary = Color("colorsBackgroundBgBrandPrimary", bundle: .module)
+    public static let colorsBackgroundBgBrandPrimaryHover = Color("colorsBackgroundBgBrandPrimaryHover", bundle: .module)
     public static let colorsBackgroundBgBrandSecondary = Color("colorsBackgroundBgBrandSecondary", bundle: .module)
     public static let colorsBackgroundBgBrandSecondaryHover = Color("colorsBackgroundBgBrandSecondaryHover", bundle: .module)
     public static let colorsBackgroundBgBrandSection = Color("colorsBackgroundBgBrandSection", bundle: .module)
