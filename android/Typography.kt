@@ -31,73 +31,73 @@ object Typography {
     )
 
     val headingSmRegular = TextStyle(
-        fontSize = 40.sp,
+        fontSize = 32.sp,
         fontWeight = FontWeight.Normal,
         lineHeight = 40.sp,
     )
 
     val headingSmMedium = TextStyle(
-        fontSize = 40.sp,
+        fontSize = 32.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 40.sp,
     )
 
     val headingSmSemibold = TextStyle(
-        fontSize = 40.sp,
+        fontSize = 32.sp,
         fontWeight = FontWeight.SemiBold,
         lineHeight = 40.sp,
     )
 
     val headingSmBold = TextStyle(
-        fontSize = 40.sp,
+        fontSize = 32.sp,
         fontWeight = FontWeight.Bold,
         lineHeight = 40.sp,
     )
 
     val headingXsRegular = TextStyle(
-        fontSize = 32.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Normal,
         lineHeight = 32.sp,
     )
 
     val headingXsMedium = TextStyle(
-        fontSize = 32.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 32.sp,
     )
 
     val headingXsSemibold = TextStyle(
-        fontSize = 32.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.SemiBold,
         lineHeight = 32.sp,
     )
 
     val headingXsBold = TextStyle(
-        fontSize = 32.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 40.sp,
+        lineHeight = 32.sp,
     )
 
     val bodyLgRegular = TextStyle(
-        fontSize = 20.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Normal,
         lineHeight = 26.sp,
     )
 
     val bodyLgMedium = TextStyle(
-        fontSize = 20.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 26.sp,
     )
 
     val bodyLgSemibold = TextStyle(
-        fontSize = 20.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.SemiBold,
         lineHeight = 26.sp,
     )
 
     val bodyLgBold = TextStyle(
-        fontSize = 20.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Bold,
         lineHeight = 26.sp,
     )
@@ -153,25 +153,31 @@ object Typography {
     val bodyXsRegular = TextStyle(
         fontSize = 12.sp,
         fontWeight = FontWeight.Normal,
-        lineHeight = 14.sp,
+        lineHeight = 18.sp,
     )
 
     val bodyXsMedium = TextStyle(
         fontSize = 12.sp,
         fontWeight = FontWeight.Medium,
-        lineHeight = 14.sp,
+        lineHeight = 18.sp,
     )
 
     val bodyXsSemibold = TextStyle(
         fontSize = 12.sp,
         fontWeight = FontWeight.SemiBold,
-        lineHeight = 14.sp,
+        lineHeight = 18.sp,
     )
 
     val bodyXsBold = TextStyle(
         fontSize = 12.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 14.sp,
+        lineHeight = 18.sp,
+    )
+
+    val bodyXsSemoBold = TextStyle(
+        fontSize = 12.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 18.sp,
     )
 
     val headingXlRegular = TextStyle(
@@ -195,6 +201,12 @@ object Typography {
     val headingXlBold = TextStyle(
         fontSize = 48.sp,
         fontWeight = FontWeight.Bold,
+        lineHeight = 56.sp,
+    )
+
+    val headingXlSemiBold = TextStyle(
+        fontSize = 48.sp,
+        fontWeight = FontWeight.SemiBold,
         lineHeight = 56.sp,
     )
 
@@ -222,6 +234,12 @@ object Typography {
         lineHeight = 48.sp,
     )
 
+    val headingLgSemiBold = TextStyle(
+        fontSize = 40.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 48.sp,
+    )
+
     val bodyXlRegular = TextStyle(
         fontSize = 20.sp,
         fontWeight = FontWeight.Normal,
@@ -243,6 +261,12 @@ object Typography {
     val bodyXlBold = TextStyle(
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
+        lineHeight = 28.sp,
+    )
+
+    val bodyXlSemiBold = TextStyle(
+        fontSize = 20.sp,
+        fontWeight = FontWeight.SemiBold,
         lineHeight = 28.sp,
     )
 
