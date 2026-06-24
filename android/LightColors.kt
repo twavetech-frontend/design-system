@@ -275,6 +275,8 @@ object LightColors {
     val colorsBackgroundBgBrandSecondaryHover = Color(0xFFCFAEFF)
     val colorsBackgroundBgField = Color(0xFFF3F5F7)
     val colorsBackgroundBgBrandPrimaryHover = Color(0xFFE6D4FF)
+    val colorsBackgroundBgQuaternaryHover = Color(0xFFB3BDC7)
+    val colorsBackgroundBgTertiaryHover = Color(0xFFDCE0E5)
     val colorsForegroundFgSecondary = Color(0xFF6F7E8D)
     val colorsForegroundFgWarningPrimary = Color(0xFFF16D00)
     val colorsForegroundFgSuccessPrimary = Color(0xFF3BBF2E)

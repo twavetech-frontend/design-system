@@ -274,6 +274,8 @@
   --colors-background-bgBrandSecondaryHover: #5200b0;
   --colors-background-bgField: #22262f;
   --colors-background-bgBrandPrimaryHover: #340078;
+  --colors-background-bgQuaternaryHover: #373a41;
+  --colors-background-bgTertiaryHover: #22262f;
   --colors-foreground-fgSecondary: #94979c;
   --colors-foreground-fgWarningPrimary: #ed7c1e;
   --colors-foreground-fgSuccessPrimary: #5bbe49;
@@ -756,7 +758,6 @@
   --carmenSans-bodyXs-extraBold: 800 12px/18 'Carmen sans';
   --carmenSans-bodyXs-bold: 700 12px/18 'Carmen sans';
   --carmenSans-bodyXs-regular: 400 12px/18 'Carmen sans';
-  --diabledOpacity: 50;
   --disabledOpacity: 20;
   --componentColors-utility-blue-utilityBlue600: #6ebeff;
   --componentColors-utility-blue-utilityBlue700: #a8d8ff;
