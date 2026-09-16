@@ -689,4 +689,6 @@ object DarkColors {
     val componentColorsAlphaAlphaBlack8 = Color(0x14FFFFFF)
     val componentColorsAlphaAlphaBlack4 = Color(0x0AFFFFFF)
     val componentColorsAlphaAlphaWhite12 = Color(0x1F000000)
+    val componentColorsAlphaAlphaWhite0 = Color(0x00000000)
+    val componentColorsAlphaAlphaBlack0 = Color(0x00FFFFFF)
 }

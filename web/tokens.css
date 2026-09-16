@@ -217,7 +217,7 @@
   --colors-text-textSuccessPrimary: #3bbf2e;
   --colors-text-textWhite: #ffffff;
   --colors-text-textSecondary: #6f7e8d;
-  --colors-text-textDisabled: #dce0e5;
+  --colors-text-textDisabled: #b3bdc7;
   --colors-text-textSecondaryHover: #566574;
   --colors-text-textTertiaryHover: #6f7e8d;
   --colors-text-textBrandSecondary: #9b55ff;
@@ -238,7 +238,7 @@
   --colors-border-borderDisabled: #dce0e5;
   --colors-border-borderError: #df1634;
   --colors-border-borderTertiary: #f3f5f7;
-  --colors-border-borderFocus: #566574;
+  --colors-border-borderFocus: #2f3943;
   --colors-background-bgPrimary: #ffffff;
   --colors-background-bgTertiary: #dce0e5;
   --colors-background-bgBrandPrimary: #f4ecff;
@@ -502,6 +502,10 @@
   --gradient-brand-gradient6~5~4: linear-gradient(90deg, #6a00e0 0%, #7700ff 20%, #9b55ff 100%);
   --gradient-brand-gradient5~4: linear-gradient(90deg, #7700ff 20%, #9b55ff 100%);
   --gradient-brand-gradient5~3: linear-gradient(90deg, #7700ff 20%, #b685ff 100%);
+  --gradient-layer-white0>100: linear-gradient(180deg, #ffffff00 0%, #ffffff 100%);
+  --gradient-layer-white0>100-40: linear-gradient(180deg, #ffffff00 0%, #ffffff 40%);
+  --gradient-layer-black0>100: linear-gradient(180deg, #00000000 0%, #000000 100%);
+  --gradient-layer-black0>100-40: linear-gradient(180deg, #00000000 0%, #000000 40%);
   --shadows-shadowXs: 0 1px 2px 0 #0a0d120d; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
   --shadows-shadowSm: 0 1px 3px 0 #0a0d121a, 0 1px 2px -1px #0a0d121a; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
   --shadows-shadowMd: 0 4px 6px -1px #0a0d1214, 0 2px 4px -2px #0a0d120f; /** Shadows allow you to add depth and realism to designs by positioning elements on a z-axis. */
@@ -692,7 +696,7 @@
   --spacing5xl: 40;
   --fontFamily-fontFamilyHeading: Pretendard;
   --fontFamily-fontFamilyBody: Pretendard;
-  --fontFamily-fontFamilyGraphic: Carmen sans;
+  --fontFamily-fontFamilyGraphic: Carmen Sans;
   --fontWeight-regular: Regular;
   --fontWeight-medium: Medium;
   --fontWeight-semibold: Semibold;
@@ -731,8 +735,8 @@
   --carmenSans-headingSm-bold: 700 32px/40 'Carmen Sans';
   --carmenSans-headingSm-extraBold: 800 32px/40 'Carmen Sans';
   --carmenSans-bodyXl-regualr: 400 16px/24 'Carmen Sans';
-  --carmenSans-bodyXl-bold: 700 16px/24 'Carmen Sans';
-  --carmenSans-bodyXl-extraBold: 800 16px/24 'Carmen Sans';
+  --carmenSans-bodyXl-bold: 700 20px/28 'Carmen Sans';
+  --carmenSans-bodyXl-extraBold: 800 20px/28 'Carmen Sans';
   --carmenSans-headingXl-regular: 400 48px/56 'Carmen Sans';
   --carmenSans-headingXl-bold: 700 48px/56 'Carmen Sans';
   --carmenSans-headingXl-extraBold: 800 48px/56 'Carmen Sans';
@@ -935,4 +939,6 @@
   --componentColors-alpha-alphaBlack8: rgba(0, 0, 0, 0.08);
   --componentColors-alpha-alphaBlack4: rgba(0, 0, 0, 0.04);
   --componentColors-alpha-alphaWhite12: rgba(255, 255, 255, 0.12);
+  --componentColors-alpha-alphaWhite0: rgba(255, 255, 255, 0);
+  --componentColors-alpha-alphaBlack0: rgba(0, 0, 0, 0);
 }

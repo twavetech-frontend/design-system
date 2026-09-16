@@ -331,15 +331,15 @@ object Typography {
     )
 
     val carmenSansBodyXlBold = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
-        lineHeight = 24.sp,
+        lineHeight = 28.sp,
     )
 
     val carmenSansBodyXlExtraBold = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 20.sp,
         fontWeight = FontWeight.ExtraBold,
-        lineHeight = 24.sp,
+        lineHeight = 28.sp,
     )
 
     val carmenSansHeadingXlRegular = TextStyle(
