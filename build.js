@@ -81,6 +81,30 @@ const ALIAS_MAP = {
 // Register all Tokens Studio transforms
 register(StyleDictionary);
 
+// style-dictionary 5.5.x stopped rounding rgba() alpha (e.g. 0.9803921568627451).
+// Wrap the built-in color/css transform so alpha is rounded to 2 decimals like before,
+// keeping web/tokens*.css, web/tokens.ts and iOS colorsets stable.
+// Note: re-registering under the same 'color/css' name is ignored by SD instances,
+// so register under a new name and swap it into the tokens-studio group in place.
+const builtinCssColor = StyleDictionary.hooks.transforms['color/css'];
+StyleDictionary.registerTransform({
+    ...builtinCssColor,
+    name: 'color/css-rounded-alpha',
+    transform: (token, platform, options) => {
+        const out = builtinCssColor.transform(token, platform, options);
+        if (typeof out !== 'string') return out;
+        return out.replace(/rgba\(([^)]*),\s*([\d.]+)\s*\)/g, (_, rgb, a) => {
+            const rounded = Math.round(parseFloat(a) * 100) / 100;
+            return `rgba(${rgb}, ${rounded})`;
+        });
+    },
+});
+{
+    const group = StyleDictionary.hooks.transformGroups['tokens-studio'];
+    const idx = group.indexOf('color/css');
+    if (idx >= 0) group[idx] = 'color/css-rounded-alpha';
+}
+
 StyleDictionary.registerFormat(androidColorsFormatDef);
 StyleDictionary.registerFormat(androidSpacingFormatDef);
 StyleDictionary.registerFormat(androidTypographyFormatDef);
