@@ -5,7 +5,7 @@
 :root {
   --colors-base-white: #ffffff;
   --colors-base-black: #000000;
-  --colors-base-transparent: rgba(255, 255, 255, 0);
+  --colors-base-transparent: rgba(255, 255, 255, 0.5);
   --colors-grayNeutral-25: #f9fafb;
   --colors-grayNeutral-50: #f3f5f7;
   --colors-grayNeutral-100: #eceef1;

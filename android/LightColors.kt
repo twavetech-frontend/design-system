@@ -6,7 +6,7 @@ import androidx.compose.ui.graphics.Color
 object LightColors {
     val colorsBaseWhite = Color(0xFFFFFFFF)
     val colorsBaseBlack = Color(0xFF000000)
-    val colorsBaseTransparent = Color(0x00FFFFFF)
+    val colorsBaseTransparent = Color(0x80FFFFFF)
     val colorsGrayNeutral25 = Color(0xFFF9FAFB)
     val colorsGrayNeutral50 = Color(0xFFF3F5F7)
     val colorsGrayNeutral100 = Color(0xFFECEEF1)
