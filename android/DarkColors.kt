@@ -277,6 +277,8 @@ object DarkColors {
     val colorsBackgroundBgBrandPrimaryHover = Color(0xFF340078)
     val colorsBackgroundBgQuaternaryHover = Color(0xFF373A41)
     val colorsBackgroundBgTertiaryHover = Color(0xFF22262F)
+    val colorsBackgroundBgGraySolid = Color(0xFF8896A4)
+    val colorsBackgroundBgGraySolidHover = Color(0xFF9AA6B3)
     val colorsForegroundFgSecondary = Color(0xFF94979C)
     val colorsForegroundFgWarningPrimary = Color(0xFFED7C1E)
     val colorsForegroundFgSuccessPrimary = Color(0xFF5BBE49)

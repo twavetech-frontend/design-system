@@ -276,6 +276,8 @@
   --colors-background-bgBrandPrimaryHover: #340078;
   --colors-background-bgQuaternaryHover: #373a41;
   --colors-background-bgTertiaryHover: #22262f;
+  --colors-background-bgGraySolid: #8896a4;
+  --colors-background-bgGraySolidHover: #9aa6b3;
   --colors-foreground-fgSecondary: #94979c;
   --colors-foreground-fgWarningPrimary: #ed7c1e;
   --colors-foreground-fgSuccessPrimary: #5bbe49;
@@ -672,6 +674,7 @@
   --bodyXl-medium: 500 20px/28 Pretendard;
   --bodyXl-semibold: 600 20px/28 Pretendard;
   --bodyXl-bold: 700 20px/28 Pretendard;
+  --boolean: true;
   --radiusNone: 0;
   --radiusXxs: 2;
   --radiusXs: 4;

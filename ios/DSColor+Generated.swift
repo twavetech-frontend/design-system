@@ -57,6 +57,8 @@ public enum DSColor {
     public static let colorsBackgroundBgErrorSolid = Color("colorsBackgroundBgErrorSolid", bundle: .module)
     public static let colorsBackgroundBgErrorSolidHover = Color("colorsBackgroundBgErrorSolidHover", bundle: .module)
     public static let colorsBackgroundBgField = Color("colorsBackgroundBgField", bundle: .module)
+    public static let colorsBackgroundBgGraySolid = Color("colorsBackgroundBgGraySolid", bundle: .module)
+    public static let colorsBackgroundBgGraySolidHover = Color("colorsBackgroundBgGraySolidHover", bundle: .module)
     public static let colorsBackgroundBgOverlay = Color("colorsBackgroundBgOverlay", bundle: .module)
     public static let colorsBackgroundBgPrimary = Color("colorsBackgroundBgPrimary", bundle: .module)
     public static let colorsBackgroundBgPrimaryHover = Color("colorsBackgroundBgPrimaryHover", bundle: .module)
